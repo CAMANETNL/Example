@@ -1,0 +1,10 @@
+Example/.vs/Example/config/applicationhost.config
+Example/Example.Application/bin/
+Example/Example.Application/obj/
+Example/Example.Domain/bin/
+Example/Example.Domain/obj/
+Example/Example.Infrastructure/bin/
+Example/Example.Infrastructure/obj/
+Example/Example/bin/Debug/netcoreapp3.1/appsettings.json
+Example/Example/bin/
+Example/Example/obj/
