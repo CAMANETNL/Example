@@ -16,11 +16,11 @@ namespace Example.Domain.Contracts
         public int CompanyId { get; private set; }
         public Company Company { get; private set; }
 
-        private Contract(double price, int tenantId, int templateId)
+        private Contract(double price, int companyId, int templateId)
         {
             // Needed by EF COre
             Price = price;
-            CompanyId = tenantId;
+            CompanyId = companyId;
             TemplateId = templateId;
             Signed = false;
         }
