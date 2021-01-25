@@ -1,7 +1,6 @@
-﻿
-using Example.Domain.SharedKernel;
+﻿using Example.Domain.SharedKernel;
 
-namespace Example.Domain
+namespace Example.Domain.Companies
 
 {
     public class Company : Entity

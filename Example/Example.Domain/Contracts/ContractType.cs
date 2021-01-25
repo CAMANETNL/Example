@@ -1,5 +1,5 @@
 ﻿
-namespace Example.Domain.Enums
+namespace Example.Domain.Contracts
 {
     public enum ContractType
     {

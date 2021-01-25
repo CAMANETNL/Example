@@ -1,4 +1,4 @@
-﻿namespace Example.Domain.Enums
+﻿namespace Example.Domain.Deals
 {
     public enum DealStatus
     {

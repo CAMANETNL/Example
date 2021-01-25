@@ -1,6 +1,7 @@
 ﻿using Example.Domain.SharedKernel;
+using Example.Domain.Companies;
 
-namespace Example.Domain
+namespace Example.Domain.Contracts
 {
     public class Contract : Entity
     {
@@ -12,22 +13,22 @@ namespace Example.Domain
         public ContractTemplate Template { get; private set; }
 
         // Navigation Props
-        public int TenantId { get; private set; }
-        public Company Tenant { get; private set; }
+        public int CompanyId { get; private set; }
+        public Company Company { get; private set; }
 
         private Contract(double price, int tenantId, int templateId)
         {
             // Needed by EF COre
             Price = price;
-            TenantId = tenantId;
+            CompanyId = tenantId;
             TemplateId = templateId;
             Signed = false;
         }
 
-        public Contract(double price, Company tenant, ContractTemplate template)
+        public Contract(double price, Company company, ContractTemplate template)
         {
             Price = price;
-            Tenant = tenant;
+            Company = company;
             Template = template;
             Signed = false;
         }

@@ -1,7 +1,7 @@
 ﻿
 using Example.Domain.SharedKernel;
 
-namespace Example.Domain
+namespace Example.Domain.Contracts
 {
     public class ContractTemplate : Entity
     {

@@ -1,7 +1,7 @@
-using Example.Domain.Enums;
+using Example.Domain.Contracts;
 using Example.Domain.SharedKernel;
 
-namespace Example.Domain
+namespace Example.Domain.Deals
 {
     public class Deal : Entity
     {
