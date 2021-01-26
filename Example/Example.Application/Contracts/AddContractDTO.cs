@@ -7,8 +7,8 @@ namespace Example.Application.Contracts
         [Required]
         public double Price { get; set; }
         [Required]
-        public int ContractId { get; set; }
-        [Required]
         public int TemplateId { get; set; }
+        [Required]
+        public int CompanyId { get; set; }
     }
 }

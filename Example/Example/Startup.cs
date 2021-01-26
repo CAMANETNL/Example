@@ -1,17 +1,17 @@
+using AutoMapper;
+using Example.Application.Companies;
+using Example.Application.Contracts;
+using Example.Application.Deals;
+using Example.Domain.Deals.Interfaces;
+using Example.Domain.SharedKernel.Interfaces;
 using Example.Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace Example
 {
@@ -35,8 +35,14 @@ namespace Example
             });
             
             services.AddDbContext<AppDbContext>();
+            services.AddAutoMapper(typeof(MappingDealsProfile));
+            services.AddAutoMapper(typeof(MappingCompaniesProfile));
+            services.AddAutoMapper(typeof(MappingContractsProfile));
 
+            services.AddTransient(typeof(IRepository<>), typeof(EFRepository<>));
+            services.AddTransient(typeof(IDealsService), typeof(DealsService));
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

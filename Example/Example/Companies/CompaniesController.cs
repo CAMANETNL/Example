@@ -1,8 +1,8 @@
-﻿using Example.API.Common;
+﻿using AutoMapper;
+using Example.API.Common;
+using Example.Domain.Companies;
+using Example.Domain.SharedKernel.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -12,8 +12,13 @@ namespace Example.API.Companies
     [Route("[controller]")]
     public class CompaniesController : BaseApiController
     {
-        public CompaniesController(/*TODO*/)
+        private readonly IRepository<Company> _companiesRepo;
+        private readonly IMapper _mapper;
+
+        public CompaniesController(IRepository<Company> companiesRepo, IMapper mapper)
         {
+            _companiesRepo = companiesRepo;
+            _mapper = mapper;
         }
 
         public async override Task<IActionResult> GetAsync()
