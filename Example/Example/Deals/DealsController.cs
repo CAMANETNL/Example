@@ -1,4 +1,6 @@
-﻿using Example.API.Common;
+﻿using AutoMapper;
+using Example.API.Common;
+using Example.Domain.Deals.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using System.Threading.Tasks;
@@ -9,9 +11,13 @@ namespace Example.API.Deals
     [Route("[controller]")]
     public class DealsController : BaseApiController
     {
-       
-        public DealsController(/*TODO*/)
+        private readonly IDealsService _service;
+        private readonly IMapper _mapper;
+
+        public DealsController(IDealsService service, IMapper mapper)
         {
+            _service = service;
+            _mapper = mapper;
         }
 
         public override async Task<IActionResult> GetAsync()
