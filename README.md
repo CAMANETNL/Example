@@ -27,7 +27,7 @@ A system is needed to keep track of all arrangements made so the right amount of
 --------------------------------------
 
 Some requirements: 
-- Buy and Sell contracts will have different content.
+- Buy and Sell contract-templates will have different content.
 - As a company I should never get to see a deal.
 - As the agency, I am interested in seeing info per deal
 - As an agency I can easily keep track of (un)signed contracts
