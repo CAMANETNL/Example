@@ -1,6 +1,22 @@
 # Example code for Infoplaza
 
 --------------------------------------
+Create Migration: dotnet ef migrations add InitConfigration -c AppDbContext  -p .\Example\
+Create database: dotnet ef database update -p .\Example\
+
+--------------------------------------
+
+For this proof of concept I took these projects as an example:
+- https://github.com/kgrzybek/sample-dotnet-core-cqrs-api
+- https://github.com/dotnet-architecture/eShopOnWeb
+
+--------------------------------------
+TODOs:
+- Add Exception Handling
+- Add Validation
+- Implement CQRS + MediatR
+
+-------------------------------------
 
 Description:
 In this proof of concept I have tried to make a bare bone structure for the following:
@@ -48,13 +64,3 @@ Deals:
 - Buy: Company B, rate $95 p/h and Sell: Piet, rate $55 p/h
 - Buy: Company B, rate $95 p/h and Sell: Karel: $45 p/h
 - Buy: Company B, rate $95 p/h and Sell: Eva: $6 p/h
---------------------------------------
-
-Create Migration: dotnet ef migrations add InitConfigration -c AppDbContext  -p .\Example\
-Create database: dotnet ef database update -p .\Example\
-
---------------------------------------
-
-For this proof of concept I took these projects as an example:
-- https://github.com/kgrzybek/sample-dotnet-core-cqrs-api
-- https://github.com/dotnet-architecture/eShopOnWeb
