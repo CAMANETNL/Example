@@ -2,9 +2,9 @@
 
 namespace Example.Domain.Companies.Specifications
 {
-    public class GetTenantsSpecification : Specification<Company>
+    public class GetCompaniesSpecification : Specification<Company>
     {
-        public GetTenantsSpecification()
+        public GetCompaniesSpecification()
         {
             Query
                 .OrderByDescending(t => t.Name.ToLower());

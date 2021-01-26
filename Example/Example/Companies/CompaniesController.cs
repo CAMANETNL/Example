@@ -1,8 +1,11 @@
 ﻿using AutoMapper;
 using Example.API.Common;
+using Example.Application.Companies;
 using Example.Domain.Companies;
+using Example.Domain.Companies.Specifications;
 using Example.Domain.SharedKernel.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -23,21 +26,23 @@ namespace Example.API.Companies
 
         public async override Task<IActionResult> GetAsync()
         {
-            /*TODO*/
-            return await Task.FromResult(Ok());
+            var companies = await _companiesRepo.ListAsync(new GetCompaniesSpecification());
+            return Ok(_mapper.Map<IEnumerable<GetCompanyDTO>>(companies));
         }
 
         public async override Task<IActionResult> GetAsync(int id)
         {
-            /*TODO*/
-            return await Task.FromResult(Ok());
+            var company = await _companiesRepo.GetByIdAsync(id);
+            return Ok(_mapper.Map<GetCompanyDTO>(company));
         }
 
-        [ProducesResponseType(typeof(/*TODO*/object), (int)HttpStatusCode.Created)]
-        public async override Task<IActionResult> CreateAsync([FromBody] /*TODO*/object company)
+        [HttpPost]
+        [ProducesResponseType((int)HttpStatusCode.NoContent)]
+        [ProducesResponseType(typeof(GetCompanyDTO), (int)HttpStatusCode.Created)]
+        public async Task<IActionResult> CreateAsync([FromBody] AddCompanyDTO company)
         {
-            /*TODO*/
-            return await Task.FromResult(Created(string.Empty, company));
+            var companyCreated = await _companiesRepo.AddAsync(_mapper.Map<Company>(company));
+            return Created(string.Empty, _mapper.Map<GetCompanyDTO>(companyCreated));
         }
     }
 }

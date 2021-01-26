@@ -5,14 +5,14 @@ using System.ComponentModel.DataAnnotations;
 namespace Example.Application.Deals
 
 {
-    public class GetDealDto
+    public class GetDealDTO
     {
         public DealStatus Status { get; set; }
         public GetContractDTO Buy { get; set; }
         public GetContractDTO Sell { get; set; }
     }
 
-    public class AddDealDto
+    public class AddDealDTO
     {
         [Required]
         public AddContractDTO Buy { get; set; } = new AddContractDTO() { };
