@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace Example.API.Migrations
+namespace Example.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210126114155_Init")]
-    partial class Init
+    [Migration("20210126114927_NewMigration")]
+    partial class NewMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

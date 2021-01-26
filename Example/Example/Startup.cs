@@ -37,7 +37,7 @@ namespace Example
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection"),
-                    x => x.MigrationsAssembly("Example.API")
+                    x => x.MigrationsAssembly("Example.Infrastructure")
                     )
                 );
            
