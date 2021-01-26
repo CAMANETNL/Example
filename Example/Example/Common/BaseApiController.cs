@@ -31,7 +31,7 @@ namespace Example.API.Common
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.Created)]
         [ProducesResponseType((int)HttpStatusCode.NoContent)]
-        public virtual async Task<IActionResult> CreateAsync()
+        public virtual async Task<IActionResult> CreateAsync([FromBody] object newObject)
         {
             return await Task.FromResult(StatusCode(501, "Not Implemented"));
         }

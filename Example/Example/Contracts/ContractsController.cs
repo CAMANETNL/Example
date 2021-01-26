@@ -12,22 +12,25 @@ namespace Example.API.Contracts
     [Route("[controller]")]
     public class ContractsController : BaseApiController
     {
-        public ContractsController()
+        public ContractsController(/*TODO*/)
         {
         }
 
         public async override Task<IActionResult> GetAsync()
         {
+            /*TODO*/
             return await Task.FromResult(Ok());
         }
 
         public async override Task<IActionResult> GetAsync(int id)
         {
+            /*TODO*/
             return await Task.FromResult(Ok());
         }
 
         public async override Task<IActionResult> UpdateAsync(int id)
         {
+            /*TODO*/
             return await Task.FromResult(Ok());
         }
     }
