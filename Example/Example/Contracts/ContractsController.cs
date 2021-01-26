@@ -16,14 +16,17 @@ namespace Example.API.Contracts
         {
         }
 
-        [HttpGet]
         public async override Task<IActionResult> GetAsync()
         {
             return Ok();
         }
 
-        [HttpGet("{id:int}")]
         public async override Task<IActionResult> GetAsync(int id)
+        {
+            return Ok();
+        }
+
+        public async override Task<IActionResult> UpdateAsync(int id)
         {
             return Ok();
         }

@@ -14,14 +14,11 @@ namespace Example.API.Deals
         {
         }
 
-        [HttpGet]
         public override async Task<IActionResult> GetAsync()
         {
             return Ok();
         }
 
-
-        [HttpGet("{id:int}")]
         public override async Task<IActionResult> GetAsync(int id)
         {
             return Ok();
