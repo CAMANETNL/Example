@@ -1,7 +1,7 @@
 # Example code for Infoplaza
 
 --------------------------------------
-Create Migration: dotnet ef migrations add InitConfigration -c AppDbContext  -p .\Example\
+Create Migration: dotnet ef migrations add NewMigration --project Example.Infrastructure --startup-project .\Example\
 Create database: dotnet ef database update -p .\Example\
 
 --------------------------------------
