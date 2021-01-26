@@ -15,6 +15,7 @@ TODOs:
 - Add Exception Handling
 - Add Validation
 - Implement CQRS + MediatR
+- Authorization
 
 -------------------------------------
 
