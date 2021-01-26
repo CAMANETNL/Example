@@ -23,6 +23,7 @@ Definitions:
 --------------------------------------
 
 Example:
+
 Company B requests 3 developers with the agency (there is always just this agency) for an hourly rate of $95,-
 The agency finds 3 developers willing to take the job: Piet, Karel and Eva.
 
@@ -55,5 +56,5 @@ Create database: dotnet ef database update -p .\Example\
 --------------------------------------
 
 For this proof of concept I took these projects as an example:
-https://github.com/kgrzybek/sample-dotnet-core-cqrs-api
-https://github.com/dotnet-architecture/eShopOnWeb
+- https://github.com/kgrzybek/sample-dotnet-core-cqrs-api
+- https://github.com/dotnet-architecture/eShopOnWeb
