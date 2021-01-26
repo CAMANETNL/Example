@@ -1,8 +1,11 @@
 ﻿using AutoMapper;
 using Example.API.Common;
+using Example.Application.Contracts;
 using Example.Domain.Contracts;
 using Example.Domain.SharedKernel.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using POCApi.Core.Specifications;
+using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -23,20 +26,22 @@ namespace Example.API.Contracts
 
         public async override Task<IActionResult> GetAsync()
         {
-            /*TODO*/
-            return await Task.FromResult(Ok());
+            var contracts = await _contractsRepo.ListAsync(new GetContractsSpecification());
+            return Ok(_mapper.Map<IEnumerable<GetContractDTO>>(contracts));
         }
 
         public async override Task<IActionResult> GetAsync(int id)
         {
-            /*TODO*/
-            return await Task.FromResult(Ok());
+            var contract = await _contractsRepo.GetByIdAsync(id);
+            contract.MarkAsSigned();
+            return Ok(_mapper.Map<GetContractDTO>(await _contractsRepo.UpdateAsync(contract)));
         }
 
         public async override Task<IActionResult> UpdateAsync(int id)
         {
-            /*TODO*/
-            return await Task.FromResult(Ok());
+            var contract = await _contractsRepo.GetByIdAsync(id);
+            contract.MarkAsSigned();
+            return Ok(_mapper.Map<GetContractDTO>(await _contractsRepo.UpdateAsync(contract)));
         }
         
         [HttpPost]
