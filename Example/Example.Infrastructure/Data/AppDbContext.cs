@@ -14,6 +14,7 @@ namespace Example.Infrastructure.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
+            // TODO: Remove hardcoded string
             options.UseSqlite(
                 @"Data Source=C:\Users\Meloen\Documents\Example\Example.Infrastructure\sqlite.db", 
                 b => b.MigrationsAssembly("Example.API"));
