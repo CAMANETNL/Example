@@ -44,12 +44,10 @@ Contracts:
 Deals:
 - Buy: Company B, rate $95 p/h and Sell: Piet, rate $55 p/h
 - Buy: Company B, rate $95 p/h and Sell: Karel: $45 p/h
-- Buy: Company B, rate $95 p/h and Sell: Eva: $65 p/h
+- Buy: Company B, rate $95 p/h and Sell: Eva: $6 p/h
 --------------------------------------
 
-Techniques used: 
-- Dependency Injection
-- Entity Framework
-- Clean Architecture
-- Domain Driven Design
-- REST API 
+Create Migration:
+dotnet ef migrations add InitConfigration -c AppDbContext  -p .\Example\
+Create database:
+dotnet ef database update   -p .\Example\
