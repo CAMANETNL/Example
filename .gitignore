@@ -9,3 +9,5 @@ Example/Example/bin/Debug/netcoreapp3.1/appsettings.json
 Example/Example/bin/
 Example/Example/obj/
 Example/.vs/Example/v16/.suo
+Example/Example.API/bin/
+Example/Example.API/obj/
