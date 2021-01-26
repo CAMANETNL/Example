@@ -19,6 +19,7 @@ TODOs:
 -------------------------------------
 
 Description:
+
 In this proof of concept I have tried to make a bare bone structure for the following:
 An agency provides developers to companies that need extra developers for a finite period of time. 
 A system is needed to keep track of all arrangements made so the right amount of money is paid for and to the right company.
