@@ -16,12 +16,13 @@ namespace Example.API.Deals
 
         public override async Task<IActionResult> GetAsync()
         {
-            return Ok();
+            return await Task.FromResult(Ok());
+
         }
 
         public override async Task<IActionResult> GetAsync(int id)
         {
-            return Ok();
+            return await Task.FromResult(Ok());
         }
 
     }
