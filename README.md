@@ -3,8 +3,10 @@
 --------------------------------------
 
 Description:
+In this proof of concept I have tried to make a bare bone structure for the following:
 An agency provides developers to companies that need extra developers for a finite period of time. 
 A system is needed to keep track of all arrangements made so the right amount of money is paid for and to the right company.
+
 --------------------------------------
 
 Some requirements: 
@@ -21,6 +23,7 @@ Definitions:
 --------------------------------------
 
 Example:
+
 Company B requests 3 developers with the agency (there is always just this agency) for an hourly rate of $95,-
 The agency finds 3 developers willing to take the job: Piet, Karel and Eva.
 
@@ -47,7 +50,11 @@ Deals:
 - Buy: Company B, rate $95 p/h and Sell: Eva: $6 p/h
 --------------------------------------
 
-Create Migration:
-dotnet ef migrations add InitConfigration -c AppDbContext  -p .\Example\
-Create database:
-dotnet ef database update   -p .\Example\
+Create Migration: dotnet ef migrations add InitConfigration -c AppDbContext  -p .\Example\
+Create database: dotnet ef database update -p .\Example\
+
+--------------------------------------
+
+For this proof of concept I took these projects as an example:
+- https://github.com/kgrzybek/sample-dotnet-core-cqrs-api
+- https://github.com/dotnet-architecture/eShopOnWeb
