@@ -33,11 +33,11 @@ namespace Example.API.Companies
         public async override Task<IActionResult> GetAsync(int id)
         {
             var company = await _companiesRepo.GetByIdAsync(id);
+            // TODO: ExceptionHandling NotFound
             return Ok(_mapper.Map<GetCompanyDTO>(company));
         }
 
         [HttpPost]
-        [ProducesResponseType((int)HttpStatusCode.NoContent)]
         [ProducesResponseType(typeof(GetCompanyDTO), (int)HttpStatusCode.Created)]
         public async Task<IActionResult> CreateAsync([FromBody] AddCompanyDTO company)
         {

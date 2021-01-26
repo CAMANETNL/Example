@@ -16,9 +16,10 @@ namespace Example.Infrastructure.Data
         {
             // TODO: Remove hardcoded string
             options.UseSqlite(
-                @"Data Source=C:\Users\Meloen\Documents\Example\Example.Infrastructure\sqlite.db", 
+                @"Data Source=C:\Users\Cathaline\Documents\Meloen\Example\Example\sqlite.db",
                 b => b.MigrationsAssembly("Example.API"));
         }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

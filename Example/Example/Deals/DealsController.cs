@@ -28,13 +28,23 @@ namespace Example.API.Deals
             return Ok(_mapper.Map<IEnumerable<GetDealDTO>>(deals));
         }
 
+        /// <summary>
+        /// When agency gets a deal, the deal status is derived from the contract's signed values
+        /// </summary>
+        /// <param name="id"></param>
         public override async Task<IActionResult> GetAsync(int id)
         {
             var deal = await _service.GetDealAsync(id);
+            // TODO: ExceptionHandling: Not Found
             return Ok(_mapper.Map<GetDealDTO>(deal));
         }
 
 
+        /// <summary>
+        /// When the agency creates a deal, two contracts are created: For the buyer and the seller.
+        /// </summary>
+        /// <param name="deal"></param>
+        /// <returns></returns>
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.Created)]
         [ProducesResponseType((int)HttpStatusCode.NoContent)]

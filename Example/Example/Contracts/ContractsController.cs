@@ -33,21 +33,30 @@ namespace Example.API.Contracts
         public async override Task<IActionResult> GetAsync(int id)
         {
             var contract = await _contractsRepo.GetByIdAsync(id);
+            // TODO: ExceptionHandling NotFound
             contract.MarkAsSigned();
             return Ok(_mapper.Map<GetContractDTO>(await _contractsRepo.UpdateAsync(contract)));
         }
 
+        /// <summary>
+        /// When the company (buy or sell) signes the contract, the status is updated
+        /// Once signed it can't be undone
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async override Task<IActionResult> UpdateAsync(int id)
         {
             var contract = await _contractsRepo.GetByIdAsync(id);
+            // TODO: ExceptionHandling: Not Found
             contract.MarkAsSigned();
+            // TODO: When requesting to sign when already signed throw Exception
             return Ok(_mapper.Map<GetContractDTO>(await _contractsRepo.UpdateAsync(contract)));
         }
         
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.Created)]
         [ProducesResponseType((int)HttpStatusCode.NoContent)]
-        public async Task<IActionResult> CreateAsync([FromBody] object newObject)
+        public async Task<IActionResult> CreateAsync()
         {
             return await Task.FromResult(StatusCode(501, "Not Implemented"));
         }
